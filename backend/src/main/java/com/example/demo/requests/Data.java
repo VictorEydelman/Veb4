@@ -9,5 +9,4 @@ public class Data {
     private String x;
     @NotNull private String y;
     @NotNull private String r;
-
 }

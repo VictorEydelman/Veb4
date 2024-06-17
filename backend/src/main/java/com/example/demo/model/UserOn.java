@@ -15,13 +15,7 @@ import java.io.Serializable;
 @Getter
 @Table
 @Data
-//@NamedQueries({
-        //@NamedQuery(name=UserOn.FIND_ALL, query="SELECT u FROM UserOn u"),
-        //@NamedQuery(name=UserOn.FIND_BY_LOGIN_PASSWORD, query="SELECT u FROM UserOn u WHERE u.login=:login"),
-//})
 public class UserOn implements Serializable {
-    //public static final String FIND_ALL = "UserOne.findAll";
-    //public static final String FIND_BY_LOGIN_PASSWORD = "UserOne.findByLoginAndPassword";
     @Column
     private String login;
     @Column
@@ -44,11 +38,4 @@ public class UserOn implements Serializable {
     public String getLogin(){
         return login;
     }
-    /*@OneToMany
-    @JoinTable(
-            name = "users_datao",
-            joinColumns = @JoinColumn(name = "userOn_login"),
-            inverseJoinColumns = @JoinColumn(name = "dat_id")
-    )
-    private Collection<Datao> dataos;*/
 }

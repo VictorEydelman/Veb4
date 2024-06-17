@@ -26,28 +26,4 @@ public class UserService  {
     public UserOn findByLoginAndPassword(String login,String password){
         return userRepository.getByLoginAndPassword(login,password);
     }
-
-   /* @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        UserOn user = userRepository.findByUsername(username);
-
-        if (user == null) {
-            throw new UsernameNotFoundException("User not found");
-        }
-
-        return (UserDetails) user;
-    }*/
-
-
-
-    /*@Override
-    public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
-        UserOn user = userRepository.getByLogin(login);
-
-        if (user == null) {
-            throw new UsernameNotFoundException("User not found");
-        }
-
-        return (UserDetails) user;
-    }*/
 }

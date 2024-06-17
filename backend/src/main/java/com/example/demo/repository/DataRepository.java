@@ -9,8 +9,6 @@ import java.util.List;
 
 @Repository
 public interface DataRepository extends JpaRepository<Datas,Long> {
-    //List<DataONE> ();
     List<Datas> findAllByLogin (String login);
     void deleteAllByLogin (String login);
-
 }

@@ -17,8 +17,6 @@ public class DataService {
     public void register(float x, float y, float r, String result, String querytime, String login){
         Datas dataon = new Datas(0,x,y,r,result,querytime,login);
         dataRepository.save(dataon);
-        //List<Dataon> dataons=employeRepository.findAll();
-        //System.out.println(dataons.get(0).getX());
     }
     @Transactional
     public List<Datas> getAllByLogin(String login){
@@ -28,9 +26,4 @@ public class DataService {
     public void deleteByLogin(String login){
         dataRepository.deleteAllByLogin(login);
     }
-
-    /*@Transactional
-    public Dataon findByLogin(String login){
-        return employeRepository.getByLogin(login);
-    }*/
 }

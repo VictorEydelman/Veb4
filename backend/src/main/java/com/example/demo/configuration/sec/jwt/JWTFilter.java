@@ -20,7 +20,6 @@ public class JWTFilter extends GenericFilter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         String token = jwtUtil.resolveToken((HttpServletRequest) servletRequest);
-        //System.out.println(token+"chgfvjhnkl;");
         if (token != null && jwtUtil.validateToken(token)) {
             Authentication auth = jwtUtil.getAuthentication(token);
             if (auth != null) SecurityContextHolder.getContext().setAuthentication(auth);

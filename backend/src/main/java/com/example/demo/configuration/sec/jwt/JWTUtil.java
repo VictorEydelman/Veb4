@@ -37,7 +37,6 @@ public class JWTUtil {
         Date now = new Date();
         JwtBuilder m = Jwts.builder().setClaims(claims).setIssuedAt(now)
                 .setExpiration(new Date(now.getTime() + TOKEN_VALIDITY)).signWith(SignatureAlgorithm.HS512, KEY);
-        //System.out.println(SignatureAlgorithm.HS512+ " "+KEY);
         JwtBuilder n = m;
         return n.compact();
     }
@@ -79,8 +78,6 @@ public class JWTUtil {
     }
 
     public <T> T getClaim(String token, Function<Claims, T> claimsResolver) {
-        System.out.println(token+"lkj");
-        //System.out.println(Jwts.parser().setSigningKey(KEY).parseClaimsJwt(token));//.parseClaimsJws(token).getBody();
         final Claims claims = Jwts.parser().setSigningKey(KEY).parseClaimsJws(token).getBody();
         return claimsResolver.apply(claims);
     }
